@@ -10,8 +10,8 @@
       font-family: 'PNU BOLD', monospace;
       color: #e0e0e0;
       text-align: center;
-      overflow: hidden;
     }
+
     /* زر الهامبرغر */
     .menu-btn {
       position: fixed;
@@ -28,6 +28,7 @@
       margin: 5px 0;
       border-radius: 3px;
     }
+
     /* نافذة Modal */
     .modal {
       display: none;
@@ -58,18 +59,19 @@
       font-size: 2rem;
       cursor: pointer;
     }
+
     h1 {
       margin-top: 50px;
       font-size: 2.5rem;
       color: #ff4c4c;
     }
 
-    /* الفيديو full screen responsive */
-    .full-video {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+    /* الفيديو responsive حسب العرض فقط */
+    .responsive-video {
+      width: 100%;    /* يملأ كامل عرض الشاشة */
+      height: auto;   /* يحافظ على نسبة الفيديو الأصلية */
       display: block;
+      margin: 20px auto; /* يوسّط الفيديو */
     }
   </style>
 </head>
@@ -93,7 +95,7 @@
   <h1>الفيديوهات</h1>
 
   <!-- الفيديو -->
-  <video src="1768274171645.mp4" controls class="full-video"></video>
+  <video src="1768274171645.mp4" controls class="responsive-video"></video>
 
   <script>
     function openModal() {
