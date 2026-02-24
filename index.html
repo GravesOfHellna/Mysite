@@ -1,134 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>الفحل النجفي الأصيل</title>
+  <title>موقع الفحل النجفي</title>
   <style>
-    /* ===========================
-       1️⃣ الخطوط والخلفية الرئيسية
-       =========================== */
-    @font-face {
-      font-family: 'PNU BOLD';
-      src: url(data:font/woff;base64,PUT-YOUR-BASE64-HERE) format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-
     body {
       margin: 0;
-      height: 100vh;
-      background: linear-gradient(
-        to bottom,
-        #000000 0%,     
-        #555555 80%,    
-        #555555 80%,    
-        #000000 100%    
-      ); /* الخلفية مع Fade */
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #000000 0%, #555555 80%, #555555 80%, #000000 100%);
       color: #e0e0e0;
       font-family: 'PNU BOLD', monospace;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      overflow-x: hidden;
     }
-
-    /* ===========================
-       2️⃣ نصوص العنوان والفقرات
-       =========================== */
     h1 {
-      font-size: 3em;
       color: #ff4c4c;
-      margin-bottom: 20px;
+      margin-top: 50px;
     }
-
     p {
-      font-size: 1.5em;
+      font-size: 1.2rem;
     }
-
-    /* ===========================
-       3️⃣ رموز القبور والهياكل العظمية
-       =========================== */
-    .grave {
-      margin-top: 30px;
-      font-size: 5em;
-    }
-
-    /* ===========================
-       4️⃣ زر الإعدادات/الجمجمة
-       =========================== */
-    .skull-menu {
+    /* زر الهامبرغر */
+    .menu-btn {
       position: fixed;
       top: 20px;
-      left: 20px;
+      right: 20px;
+      width: 40px;
+      height: 30px;
       cursor: pointer;
-      z-index: 100;
+      z-index: 1000;
     }
-
-    .skull {
-      width: 50px;
-      height: 50px;
+    .menu-btn div {
+      height: 5px;
       background: #e0e0e0;
-      border-radius: 50%;
-      position: relative;
-      display: flex;
+      margin: 5px 0;
+      border-radius: 3px;
+    }
+    /* نافذة Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      color: #fff;
+      font-family: 'PNU BOLD', monospace;
+      z-index: 999;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
     }
-
-    .eye {
-      width: 8px;
-      height: 8px;
-      background: #000;
-      border-radius: 50%;
-      margin: 2px;
+    .modal h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
     }
-
-    .lines {
-      margin-top: 4px;
+    .modal a, .modal p {
+      color: #ff4c4c;
+      font-size: 1.5rem;
+      margin: 10px 0;
+      text-decoration: none;
     }
-
-    .lines div {
-      width: 20px;
-      height: 2px;
-      background: #000;
-      margin: 2px 0;
+    .close-btn {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 2rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-
-  <!-- ===========================
-       زر الإعدادات/الجمجمة
-       =========================== -->
-<!-- زر الهامبرغر -->
-<div class="menu-btn" onclick="openModal()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-  <div class="modal" id="menuModal">
-  <span class="close-btn" onclick="closeModal()">✖</span>
-  <h2>القائمة</h2>
-  <a href="#">الصفحة الرئيسية</a>
-  <a href="videos.html">الفيديوهات</a>
-  <p>تحت التطوير 2</p>
-  <p>تحت التطوير 3</p>
-  <p>تحت التطوير 4</p>
+  <div class="menu-btn" onclick="openModal()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-  <!-- ===========================
-       العنوان الرئيسي
-       =========================== -->
-  <h1>الفحل النجفي الأصيل</h1>
 
-  <!-- ===========================
-       فقرة الترحيب
-       =========================== -->
-  <p>نورتوا بمقبرة وادي السلام 👻</p>
+  <div class="modal" id="menuModal">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <h2>القائمة</h2>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="videos.html">الفيديوهات</a>
+    <p>تحت التطوير 2</p>
+    <p>تحت التطوير 3</p>
+    <p>تحت التطوير 4</p>
+  </div>
 
-  <!-- ===========================
-       رموز القبور والهياكل العظمية
-       =========================== -->
-  <div class="grave">💀⚰️💀</div>
+  <h1>اهلا بالجلاقة</h1>
+  <p>نورتوا</p>
 
+  <script>
+    function openModal() {
+      document.getElementById('menuModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('menuModal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
