@@ -5,42 +5,102 @@
   <style>
     body {
       margin: 0;
-      min-height: 100vh;
+      padding: 0;
       background: linear-gradient(to bottom, #000000 0%, #555555 80%, #555555 80%, #000000 100%);
-      color: #e0e0e0;
       font-family: 'PNU BOLD', monospace;
+      color: #e0e0e0;
       text-align: center;
-      padding: 20px;
+      overflow: hidden;
     }
-    h1 { color: #ff4c4c; margin-bottom: 20px; }
-    input, button { margin: 10px 0; }
+    /* زر الهامبرغر */
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .menu-btn div {
+      height: 5px;
+      background: #e0e0e0;
+      margin: 5px 0;
+      border-radius: 3px;
+    }
+    /* نافذة Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      color: #fff;
+      font-family: 'PNU BOLD', monospace;
+      z-index: 999;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .modal a, .modal p {
+      color: #ff4c4c;
+      font-size: 1.5rem;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5rem;
+      color: #ff4c4c;
+    }
+
+    /* الفيديو full screen responsive */
+    .full-video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+    }
   </style>
 </head>
 <body>
+  <div class="menu-btn" onclick="openModal()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="modal" id="menuModal">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <h2>القائمة</h2>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="videos.html">الفيديوهات</a>
+    <p>تحت التطوير 2</p>
+    <p>تحت التطوير 3</p>
+    <p>تحت التطوير 4</p>
+  </div>
+
   <h1>الفيديوهات</h1>
 
-  <!-- رفع فيديو -->
-  <video src="1768274171645.mp4" controls width="400"></video>
+  <!-- الفيديو -->
+  <video src="1768274171645.mp4" controls class="full-video"></video>
 
   <script>
-    function uploadVideo() {
-      const fileInput = document.getElementById('videoFile');
-      const container = document.getElementById('videoContainer');
-
-      if(fileInput.files.length === 0) return alert('اختار فيديو!');
-
-      const file = fileInput.files[0];
-      const url = URL.createObjectURL(file);
-
-      // إنشاء عنصر فيديو
-      const video = document.createElement('video');
-      video.src = url;
-      video.controls = true;
-      video.width = 400;
-
-      // عرض الفيديو
-      container.innerHTML = ''; // يحذف أي فيديو قديم
-      container.appendChild(video);
+    function openModal() {
+      document.getElementById('menuModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('menuModal').style.display = 'none';
     }
   </script>
 </body>
