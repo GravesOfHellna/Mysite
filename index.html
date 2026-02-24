@@ -97,3 +97,28 @@
   </script>
 </body>
 </html>
+<!-- زر التواصل -->
+<button id="تواصلBtn">تواصل</button>
+
+<!-- نافذة صغيرة للتواصل -->
+<div id="تواصلModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+    width:150px; height:150px; background:#fff; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.3); padding:10px; text-align:center; border-radius:8px; z-index:1000;">
+    <span id="تواصلClose" style="cursor:pointer; position:absolute; top:5px; right:8px; font-weight:bold;">✖</span>
+    <a href="https://t.me/jttoubot" target="_blank" style="text-decoration:none; color:#0088cc; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width:40px; margin-bottom:5px;">
+        تواصل مع الفحل النجفي
+    </a>
+</div>
+
+<script>
+    const btn = document.getElementById('تواصلBtn');
+    const modal = document.getElementById('تواصلModal');
+    const close = document.getElementById('تواصلClose');
+
+    btn.onclick = () => { modal.style.display = 'block'; }
+    close.onclick = () => { modal.style.display = 'none'; }
+
+    window.onclick = (e) => {
+        if(e.target == modal) modal.style.display = 'none';
+    }
+</script>
