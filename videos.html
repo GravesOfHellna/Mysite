@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>الفيديوهات</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #000000 0%, #555555 80%, #555555 80%, #000000 100%);
+      color: #e0e0e0;
+      font-family: 'PNU BOLD', monospace;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 { color: #ff4c4c; margin-bottom: 20px; }
+    input, button { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>الفيديوهات</h1>
+
+  <!-- رفع فيديو -->
+  <input type="file" id="videoFile" accept="video/*">
+  <button onclick="uploadVideo()">رفع الفيديو</button>
+
+  <!-- عرض الفيديو -->
+  <div id="videoContainer"></div>
+
+  <script>
+    function uploadVideo() {
+      const fileInput = document.getElementById('videoFile');
+      const container = document.getElementById('videoContainer');
+
+      if(fileInput.files.length === 0) return alert('اختار فيديو!');
+
+      const file = fileInput.files[0];
+      const url = URL.createObjectURL(file);
+
+      // إنشاء عنصر فيديو
+      const video = document.createElement('video');
+      video.src = url;
+      video.controls = true;
+      video.width = 400;
+
+      // عرض الفيديو
+      container.innerHTML = ''; // يحذف أي فيديو قديم
+      container.appendChild(video);
+    }
+  </script>
+</body>
+</html>
