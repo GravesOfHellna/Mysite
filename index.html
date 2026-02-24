@@ -3,19 +3,51 @@
 <head>
   <title>الفحل النجفي الأصيل</title>
   <style>
+    /* PNU BOLD مدمج بالـBase64 */
+    @font-face {
+      font-family: 'PNU BOLD';
+      src: url(data:font/woff;base64,PUT-YOUR-BASE64-HERE) format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       margin: 0;
-      height: 100vh; /* طول كامل الشاشة */
+      height: 100vh;
       background: linear-gradient(
         to bottom,
-        #000000 0%,       /* فوق أسود غامق */
-        #333333 15%,      /* رصاصي غامق يبدأ بعد 15% */
-        #333333 85%,      /* رصاصي غامق حتى قبل النهاية */
-        #000000 100%      /* تحت أسود غامق */
+        #000000 0%,     
+        #555555 80%,    
+        #555555 80%,    
+        #000000 100%    
       );
       color: #e0e0e0;
-      font-family: 'Courier New', monospace;
+      font-family: 'PNU BOLD', monospace;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff4c4c;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+
+    .grave {
+      margin-top: 30px;
+      font-size: 5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>الفحل النجفي الأصيل</h1>
+  <p>نورتوا بمقبرة وادي السلام 👻</p>
+  <div class="grave">💀⚰️💀</div>
+</body>
+</html>
