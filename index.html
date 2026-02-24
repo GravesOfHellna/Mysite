@@ -4,19 +4,33 @@
   <title>الفحل النجفي الأصيل</title>
   <style>
     body {
-      background-color: #1a1a1a; /* أسود داكن */
-      color: #e0e0e0; /* نص رمادي فاتح */
+      margin: 0;
+      height: 100vh; /* طول كامل الشاشة */
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.8) 0%,      /* فوق أسود */
+        #808080 15%,              /* رصاصي يبدأ من بعد 15% */
+        #808080 85%,              /* رصاصي حتى قبل النهاية */
+        rgba(0,0,0,0.8) 100%      /* تحت أسود */
+      );
+      color: #e0e0e0;
       font-family: 'Courier New', monospace;
       text-align: center;
-      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
+
     h1 {
       font-size: 3em;
-      color: #ff4c4c; /* أحمر شبيه بالدم */
+      color: #ff4c4c;
+      margin-bottom: 20px;
     }
+
     p {
       font-size: 1.5em;
     }
+
     .grave {
       margin-top: 30px;
       font-size: 5em;
